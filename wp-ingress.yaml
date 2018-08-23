@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+  annotations:
+    nginx.org/client_max_body_size: "100m"
+    nginx.org/lb-method: "ip_hash"
+spec:
+  rules:
+  - host: www.vishvish.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wordpress
+          servicePort: http
+
