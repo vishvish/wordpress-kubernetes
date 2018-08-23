@@ -51,6 +51,8 @@ create mysql
 
 create wordpress deployment
 
+deploy metallb: `kubectl apply -f https://raw.githubusercontent.com/google/metallb/v0.7.3/manifests/metallb.yaml`
+
 create metallb configmap based on hetzner node ips
 
 create wordpress service as LoadBalancer
